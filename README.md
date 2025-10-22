@@ -21,23 +21,27 @@
   Do a suicide assessment. Safety check for suicidal ideation.
   - If positive (Yes) ---> Direct to immediate support and resources: suicidal hotline
   - If negative (No) ---> Proceed to different screening tool
+<br>
 
-![alt text](image-2.png){ width=600px }
+<img src="image-2.png" alt="screenshot" width="600" />
+<br>
 <br>
  Use approved assessment tool to screen users. User will do a serries of multiple choice questions. The result will be generated once they completed.
-![alt text](image-3.png){ width=600px }
+ <img src="image-3.png" alt="screenshot" width="600" />
+ <br>
 <br>
  Based on the user's answers, the approriate suggestions will be provided. This will tell us what condition they have. User can follow personalized suggestions for intervention
- ![alt text](image-4.png){ width=600px }
+ <img src="image-4.png" alt="screenshot" width="600" />
+<br>
 <br>
 
 ### Home Screen
-![alt text](image-5.png)
+<img src="image-5.png" alt="screenshot" width="600" />
 
 
 ## Design Inspo
 
-![alt text](image-1.png){ width=600px }
+<img src="image-1.png" alt="screenshot" width="600" />
 
-![alt text](image.png){ width=600px }
+<img src="image.png" alt="screenshot" width="600" />
 
