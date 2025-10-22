@@ -25,14 +25,13 @@
 
 <img src="image-2.png" alt="screenshot" width="600" />
 <br>
-<br>
+
  Use approved assessment tool to screen users. User will do a serries of multiple choice questions. The result will be generated once they completed.
  <img src="image-3.png" alt="screenshot" width="600" />
  <br>
-<br>
+
  Based on the user's answers, the approriate suggestions will be provided. This will tell us what condition they have. User can follow personalized suggestions for intervention
  <img src="image-4.png" alt="screenshot" width="600" />
-<br>
 <br>
 
 ### Home Screen
