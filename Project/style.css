@@ -1,0 +1,58 @@
+:root {
+  --background: #F7FAF8;
+  --foreground: #1D3131;
+
+  --card: #FFFFFF;
+  --card-foreground: #1D3131;
+
+  --popover: #FFFFFF;
+  --popover-foreground: #1D3131;
+
+  --primary: #326D6D;
+  --primary-foreground: #FFFFFF;
+
+  --secondary: #D6E4DD;
+  --secondary-foreground: #1D3131;
+
+  --muted: #EBF1EE;
+  --muted-foreground: #627A7A;
+
+  --accent: #F29E7F;
+  --accent-foreground: #FFFFFF;
+
+  --destructive: #FF4C4C;
+  --destructive-foreground: #FAFAFA;
+
+  --border: #E1EAE6;
+  --input: #E1EAE6;
+  --ring: #326D6D;
+
+  --radius: 0.75rem;
+
+  --sidebar-background: #FAFAFA;
+  --sidebar-foreground: #3E3F44;
+  --sidebar-primary: #18181B;
+  --sidebar-primary-foreground: #FAFAFA;
+  --sidebar-accent: #F4F4F6;
+  --sidebar-accent-foreground: #18181B;
+  --sidebar-border: #E6E9F0;
+  --sidebar-ring: #508CFF;
+}
+
+
+ body {
+      margin: 0;
+      font-family: "Poppins", system-ui, sans-serif;
+      background: var(--background);
+      color: var(--foreground);
+    }
+
+
+.hero-title {
+    font-size: 3.75rem;
+    line-height: 1.1;
+}
+
+.text-primary {
+    color: var(--primary);
+}
