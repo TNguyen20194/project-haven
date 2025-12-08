@@ -39,14 +39,33 @@
   --sidebar-ring: #508CFF;
 }
 
+header{
+    position: fixed;
+    z-index: 50;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: var(--background);
+    border-bottom: 1px solid var(--border);
+}
 
  body {
       margin: 0;
       font-family: "Poppins", system-ui, sans-serif;
       background: var(--background);
       color: var(--foreground);
+      position: relative;
     }
 
+
+.header-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 .hero-title {
     font-size: 3.75rem;
