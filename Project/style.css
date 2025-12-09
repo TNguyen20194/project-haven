@@ -3,26 +3,23 @@
   --foreground: #1D3131;
 
   --white: #FFFFFF;
-  --white-foreground: #1D3131;
+  --soft-white: #FAFAFA;
+  --black: #000000;
+
+  --green-1: #1D3131;
+  --green-3: #627A7A;
 
   --primary: #326D6D;
-  --primary-foreground: #FFFFFF;
-
   --secondary: #D6E4DD;
-  --secondary-foreground: #1D3131;
 
   --muted: #EBF1EE;
-  --muted-foreground: #627A7A;
-
   --accent: #F29E7F;
-  --accent-foreground: #FFFFFF;
 
   --destructive: #FF4C4C;
-  --destructive-foreground: #FAFAFA;
 
   --border: #E1EAE6;
   --input: #E1EAE6;
-  --ring: #326D6D;
+  --ring: 
 
   --radius: 0.75rem;
 
@@ -32,7 +29,7 @@
   --sidebar-background: #FAFAFA;
   --sidebar-foreground: #3E3F44;
   --sidebar-primary: #18181B;
-  --sidebar-primary-foreground: #FAFAFA;
+  --sidebar---white: #FAFAFA;
   --sidebar-accent: #F4F4F6;
   --sidebar-accent-foreground: #18181B;
   --sidebar-border: #E6E9F0;
@@ -83,8 +80,8 @@ header{
     left: 0;
     margin: 0 auto;
     background-color: hsl(var(--background) / .8);
-    backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
     border-color: hsl(var(--border) / .5);
     border-bottom: 1px solid rgba(225, 234, 230, 0.9);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
@@ -120,7 +117,7 @@ header{
 
 .navigation a {
     padding: 0.5rem 1rem;
-    color: var(--muted-foreground);
+    color: var(--green-3);
     font-size: 0.875rem;
     font-weight: var(--fw-medium);
 }
@@ -132,7 +129,7 @@ header{
 
 .button-nav {
     background-color: var(--primary);
-    color: var(--primary-foreground);
+    color: var(--white);
     padding: 0.5rem 1.5rem;
     font-size: 0.875rem;
     font-weight: var(--fw-medium);
