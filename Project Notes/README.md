@@ -5,7 +5,7 @@
 - The app will connect them to safe eveident-based strategy and resources.
 
 ## Step 1 - Sign up
-- User has to sign up.
+- User has to sign up. 
   - Age
   - Name
   - Email

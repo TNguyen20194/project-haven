@@ -1,6 +1,5 @@
 :root {
   --background: #F7FAF8;
-  --foreground: #1D3131;
 
   --white: #FFFFFF;
   --soft-white: #FAFAFA;
@@ -9,7 +8,8 @@
   --green-1: #1D3131;
   --green-3: #627A7A;
 
-  --primary: #326D6D;
+  /* #326D6D */
+  --primary: #318181;
   --secondary: #D6E4DD;
 
   --muted: #EBF1EE;
@@ -19,11 +19,21 @@
 
   --border: #E1EAE6;
   --input: #E1EAE6;
-  --ring: 
+
+  --fs-section: 2.25rem;
+  --fs-h3: 1.5rem;
+
+  --lh-section: 2.5rem;
+  --lh-h3: 2rem;
+
+  --fc-footer-heading: #F5F9F7;
+  --fc-footer-text: #F5F9F7B2;
 
   --radius: 0.75rem;
 
+  --fw-light: 400;
   --fw-medium: 500;
+  --fw-medium-2: 600;
   --fw-dark: 700;
 
   --sidebar-background: #FAFAFA;
@@ -39,8 +49,8 @@
 body {
       margin: 0;
       font-family: "Poppins", system-ui, sans-serif;
-      background: hsl(var(--background));
-      color: var(--foreground);
+      background: var(--background);
+      color: var(--green-1);
       position: relative;
 }
 
@@ -71,8 +81,27 @@ body {
     color: var(--primary);
 }
 
+.section-heading {
+    color: var(--green-1);
+    font-weight: var(--fw-dark);
+    font-size: var(--fs-section);
+    line-height: var(--lh-section);
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.section-heading__text {
+    font-size: 1.125rem;
+    text-align: center;
+}
+
+.inner-container {
+    max-width: 72rem;
+    margin: 0 auto;
+}
+
 /* HEADER */
-header{
+header {
     position: fixed;
     z-index: 50;
     top: 0;
@@ -88,7 +117,7 @@ header{
 }
 
 .logo a {
-    color: var(--foreground);
+    color: var(--green-1);
     font-weight: var(--fw-dark);
     font-size: 1.2rem;
 }
@@ -123,7 +152,7 @@ header{
 }
 
 .navigation a:hover {
-    color: var(--foreground);
+    color: var(--green-1);
     background-color: var(--background);
 }
 
@@ -179,6 +208,7 @@ header{
     margin: 2rem auto 0 auto;
     font-size: 1.25rem;
     color: var(--primary);
+    font-weight: var(--fw-medium);
 }
 
 .button-cta {
@@ -191,3 +221,142 @@ header{
     align-items: center;
     justify-content: center;
 }
+
+/* SERVICES */
+.service-container {
+    padding: 5rem 1.5rem;
+    background-color: var(--muted);
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    padding: 2rem;
+    background-color: var(--white);
+    border-radius: var(--radius);
+     box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.04),
+    0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.lucide-brain, .lucide-users, .lucide-calendar {
+    width: 3rem;
+    height: 3rem;
+}
+
+.feature-card h3 {
+    color: var(--primary);
+    font-weight: var(--fw-medium-2);
+    font-size: var(--fs-h3);
+    line-height: var(--lh-h3);
+    margin-top: 1rem;
+}
+
+.feature-card p {
+    color: var(--green-1);
+    margin-top: 1rem;
+    font-weight: var(--fw-medium);
+}
+
+/* ABOUT */
+.about-container {
+    padding: 5rem 1.5rem;
+    background-color: var(--);
+}
+
+.about-text {
+    color: var(--green-1);
+    font-weight: var(--fw-medium);
+}
+
+.about-text:nth-of-type(2) {
+margin-top: 1.5rem;
+}
+
+/* JOURNEY */
+
+.resources-container {
+    padding: 5rem 1.5rem;
+    background-color: var(--primary);
+    text-align: center;
+}
+
+.section-heading__resources {
+    color: var(--white);
+}
+
+.resources-text {
+    color: var(--white);
+    font-size: 1.25rem;
+}
+
+.button-cta__profile {
+    color: var(--green-1);
+    background-color: var(--secondary);
+}
+
+/* FOOTER */
+.footer-container {
+    background-color: var(--green-1);
+    padding: 3rem 1.5rem;
+}
+
+.footer-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-bottom: 2rem;
+}
+
+.footer-heading {
+    color: var(--fc-footer-heading);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.footer-info, .contact-info {
+    color: var(--fc-footer-text);
+}
+
+.flex-item {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.flex-item:nth-of-type(2) {
+    margin-top: 0.5rem;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-icon {
+    background-color: #f5F9F71A;
+    padding: 0.5rem;
+}
+
+.social-icon:hover {
+    background-color: rgb(247 250 248 / 0.2);
+}
+
+.badge__social {
+    height: 1.25rem;
+    width: 1.25rem;
+    color: var(--fc-footer-heading);
+}
+
+
+.copyright {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgb(247 250 248 / 0.2);
+}
+
