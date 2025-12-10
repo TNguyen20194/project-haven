@@ -1,6 +1,7 @@
 const header = document.querySelector("header");
 const mobileMenu = document.getElementById("mobile-menu");
 const toggleButtons = document.querySelectorAll(".mobile-menu-toggle");
+const mobileLinks = document.querySelectorAll("a");
 
 
 console.log(header, mobileMenu, toggleButtons.length)
@@ -38,4 +39,10 @@ toggleButtons.forEach(button => {
     button.addEventListener("click", toggleMenu)
 })
 
+mobileLinks.forEach(link => {
+    link.addEventListener("click", () => {
+        closeMenu();
+        document.body.style.overflow = "";
+    })
+});
 
