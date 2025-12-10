@@ -6,8 +6,7 @@ const mobileLinks = mobileMenu.querySelectorAll("a");
 
 console.log(header, mobileMenu, toggleButtons.length)
 
-// if (!header || !mobileMenu || toggleButtons.length === 0) return;
-
+// MOBILE MENU
 function openMenu() {
     header.classList.add("header--menu-open");
     mobileMenu.classList.add("mobile-menu--open");
