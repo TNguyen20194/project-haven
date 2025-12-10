@@ -2,10 +2,18 @@
   --background: #F7FAF8;
 
   --white: #FFFFFF;
-  --soft-white: #FAFAFA;
   --black: #000000;
+  --soft-white: #FAFAFA;
+  /* Warm beeige RGB 246, 240, 235 */
+  --warm-beige: #F6F0EB;
+  /* Soft grey RGB  90, 90, 83 */
+  --soft-grey: #393939;
+  --dark-grey: #1d1d1d;
 
   --green-1: #1D3131;
+
+  /* green 2 RGB 220, 234, 203 */
+  --green-2: #DCEACB; 
   --green-3: #627A7A;
 
   /* #326D6D */
@@ -17,7 +25,7 @@
 
   --destructive: #FF4C4C;
 
-  --border: #E1EAE6;
+  --border: rgb(247, 250, 248);
   --input: #E1EAE6;
 
   --fs-section: 2.25rem;
@@ -108,13 +116,39 @@ header {
     right: 0;
     left: 0;
     margin: 0 auto;
-    background-color: hsl(var(--background) / .8);
-    backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-    border-color: hsl(var(--border) / .5);
-    border-bottom: 1px solid rgba(225, 234, 230, 0.9);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    background: transparent;
+    border: none;
+    box-shadow: none;
 }
+
+/* .top-bar {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: .5rem 1.5rem;
+    background-color: rgba(246, 240, 235, .75);
+    backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.top-bar__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top-bar__group svg {
+    color: var(--primary);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+.top-bar__group:hover {
+    color: var(--green-1);
+}
+
+.top-bar__phone {
+    color: var(--green-1);
+    font-size: .8rem;
+} */
 
 .logo a {
     color: var(--green-1);
@@ -129,6 +163,12 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: rgba(247, 250, 248, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid;
+  border-color: var(--border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
  
 }
 
@@ -146,13 +186,12 @@ header {
 
 .navigation a {
     padding: 0.5rem 1rem;
-    color: var(--green-3);
+    color: var(--green-1);
     font-size: 0.875rem;
     font-weight: var(--fw-medium);
 }
 
 .navigation a:hover {
-    color: var(--green-1);
     background-color: var(--background);
 }
 
@@ -177,7 +216,7 @@ header {
 
 /* HERO SECTION */
 .hero {
-    padding: 8rem 1.5rem 5rem;
+    padding: 11rem 1.5rem 5rem;
 }
 
 .hero-container {
