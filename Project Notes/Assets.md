@@ -2,3 +2,4 @@
 
 ## SVG
 - https://lucide.dev/
+- https://heroicons.com/
