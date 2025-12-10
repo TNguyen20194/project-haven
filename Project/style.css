@@ -494,7 +494,7 @@ margin-top: 1.5rem;
 }
 
 /* ----- RESPONSIVE ----- */
-@media (max-width: 740px) {
+@media (max-width: 770px) {
     .navigation, .header-cta {
         display: none;
     }
@@ -506,5 +506,27 @@ margin-top: 1.5rem;
     .header-container {
         padding-inline: 1rem;
     }
+    .service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
+
+@media (max-width: 950px) {
+    .footer-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 670px) {
+    .hero-title {
+        font-size: 3rem;
+    }
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 
