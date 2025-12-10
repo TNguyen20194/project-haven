@@ -1,7 +1,7 @@
 const header = document.querySelector("header");
 const mobileMenu = document.getElementById("mobile-menu");
 const toggleButtons = document.querySelectorAll(".mobile-menu-toggle");
-const mobileLinks = document.querySelectorAll("a");
+const mobileLinks = mobileMenu.querySelectorAll("a");
 
 
 console.log(header, mobileMenu, toggleButtons.length)
