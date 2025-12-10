@@ -1,10 +1,19 @@
+const body = document.body;
+
+// MENUS
 const header = document.querySelector("header");
 const mobileMenu = document.getElementById("mobile-menu");
 const toggleButtons = document.querySelectorAll(".mobile-menu-toggle");
 const mobileLinks = mobileMenu.querySelectorAll("a");
 
+// THEME ICON
+const themeToggle = document.getElementById("themeToggle");
 
-console.log(header, mobileMenu, toggleButtons.length)
+// CTAs
+const getStartedBtn = document.getElementById("getStartedBtn");
+const createProfileBtn = document.getElementById("createProfileBtn");
+
+console.log(getStartedBtn, createProfileBtn, themeToggle, body )
 
 // MOBILE MENU
 function openMenu() {
@@ -45,3 +54,42 @@ mobileLinks.forEach(link => {
     })
 });
 
+// SET THEME
+const savedTheme = localStorage.getItem("theme");
+if(savedTheme === "dark") {
+    body.classList.add("dark");
+} else if(savedTheme === "light") {
+    body.classList.remove("dark");
+};
+
+// function updateIcon() {
+//     const isDark = body.classList.contains("dark");
+//     const sunIcon = document.querySelector(".theme-icon--sun");
+//     const moonIcon = document.querySelector(".theme-icon--moon");
+
+//     if(isDark) {
+//         sunIcon.style.display = "none";
+//         moonIcon.style.display = "inline";
+//     } else {
+//         sunIcon.style.display = "inline";
+//         moonIcon.style.display = "none";
+//     }
+// };
+
+// updateIcon();
+
+themeToggle.addEventListener("click", () => {
+    body.classList.toggle("dark");
+    const currentTheme = body.classList.contains("dark") ? "dark" : "light";
+    localStorage.setItem("theme", currentTheme);
+})
+
+
+// PAGE REDIRECT
+getStartedBtn.addEventListener("click", () => {
+    document.location.href = "auth.html"
+});
+
+createProfileBtn.addEventListener("click", () => {
+    document.location.href = "auth.html"
+});

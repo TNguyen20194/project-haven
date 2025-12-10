@@ -1,59 +1,3 @@
-:root {
-  --background: #F7FAF8;
-
-  --white: #FFFFFF;
-  --black: #000000;
-  --soft-white: #FAFAFA;
-  /* Warm beeige RGB 246, 240, 235 */
-  --warm-beige: #F6F0EB;
-  /* Soft grey RGB  90, 90, 83 */
-  --soft-grey: #393939;
-  --dark-grey: #1d1d1d;
-
-  --green-1: #1D3131;
-
-  /* green 2 RGB 220, 234, 203 */
-  --green-2: #DCEACB; 
-  --green-3: #627A7A;
-
-  /* #326D6D */
-  --primary: #318181;
-  --secondary: #D6E4DD;
-
-  --muted: #EBF1EE;
-  --accent: #F29E7F;
-
-  --destructive: #FF4C4C;
-
-  --border: rgb(247, 250, 248);
-  --input: #E1EAE6;
-
-  --fs-section: 2.25rem;
-  --fs-h3: 1.5rem;
-
-  --lh-section: 2.5rem;
-  --lh-h3: 2rem;
-
-  --fc-footer-heading: #F5F9F7;
-  --fc-footer-text: #F5F9F7B2;
-
-  --radius: 0.75rem;
-
-  --fw-light: 400;
-  --fw-medium: 500;
-  --fw-medium-2: 600;
-  --fw-dark: 700;
-
-  --sidebar-background: #FAFAFA;
-  --sidebar-foreground: #3E3F44;
-  --sidebar-primary: #18181B;
-  --sidebar---white: #FAFAFA;
-  --sidebar-accent: #F4F4F6;
-  --sidebar-accent-foreground: #18181B;
-  --sidebar-border: #E6E9F0;
-  --sidebar-ring: #508CFF;
-}
-
 body {
       margin: 0;
       font-family: "Poppins", system-ui, sans-serif;
@@ -298,6 +242,48 @@ header {
     font-weight: var(--fw-medium);
 }
 
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    color: var(--green-1);
+    cursor: pointer;
+    box-shadow: none;
+}
+
+.theme-toggle:hover {
+    background-color: var(--accent);
+}
+
+.theme-icon {
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+.theme-icon--moon {
+    display: none;
+}
+
+body.dark .theme-icon--sun {
+  display: none;
+}
+
+body.dark .theme-icon--moon {
+  display: inline;
+}
+
 .button-nav:hover {
   background-color: #3E8888;
   color: #F0FDFC;
@@ -494,6 +480,7 @@ margin-top: 1.5rem;
 }
 
 /* ----- RESPONSIVE ----- */
+
 @media (max-width: 770px) {
     .navigation, .header-cta {
         display: none;
@@ -505,6 +492,9 @@ margin-top: 1.5rem;
     }
     .header-container {
         padding-inline: 1rem;
+    }
+    .header-actions {
+        margin-left: auto;
     }
     .service-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -528,5 +518,7 @@ margin-top: 1.5rem;
         grid-template-columns: 1fr;
     }
 }
+
+
 
 
