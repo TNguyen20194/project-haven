@@ -1,9 +1,10 @@
 :root {
-  --background: #F7FAF8;
+  --background: 45 20% 97%;
 
   --white: #FFFFFF;
   --black: #000000;
   --soft-white: #FAFAFA;
+  --soft-white2: #FAFAFA;
   /* Warm beeige RGB 246, 240, 235 */
   --warm-beige: #F6F0EB;
   /* Soft grey RGB  90, 90, 83 */
@@ -11,6 +12,7 @@
   --dark-grey: #1d1d1d;
 
   --green-1: #1D3131;
+  --green-1a: #1D3131;
 
   /* green 2 RGB 220, 234, 203 */
   --green-2: #DCEACB; 
@@ -18,9 +20,11 @@
 
   /* #326D6D */
   --primary: #318181;
+  --primary2: #318181;
   --secondary: #D6E4DD;
 
   --muted: #EBF1EE;
+  --muted2: #EBF1EE;
   --accent: #F29E7F;
 
   --destructive: #FF4C4C;
@@ -44,6 +48,8 @@
   --fw-medium-2: 600;
   --fw-dark: 700;
 
+  --card: 40 15% 99%;
+
   --sidebar-background: #FAFAFA;
   --sidebar-foreground: #3E3F44;
   --sidebar-primary: #18181B;
@@ -56,17 +62,27 @@
 
 body.dark {
   /* Base colors */
-  --background: hsl(200, 15%, 12%);       /* #1a1f23 */
-  --foreground: hsl(45, 20%, 90%);        /* #eae6dc */
-  --card: hsl(200, 15%, 15%);             /* #21272c */
+  --background: 200 15% 12%;
+  --green-1: #f5f9f7;
+  --green-1a: hsl(200 15% 12%);
+
+  --soft-grey: #9ba8b4;
+  --border: #27323a;
+  --soft-white2: hsl(200 15% 12%);
+
+   /* Cards + surfaces */
+  --white: #11171c;
+  --muted: #2D35394C;
+  --muted2: hsl(200 12% 22%);
+  --card: 200 15% 15%;
 
   /* Brand colors */
-  --primary: hsl(175, 35%, 50%);          /* #53aca3 */
-  --secondary: hsl(200, 12%, 20%);        /* #2d3539 */
+  --primary: #53aca3;
+  --primary2: #FAFAFA;
+  --secondary: #1b3b3b;
 
-  /* UI colors */
-  --muted: hsl(200, 12%, 22%);            /* #313a3f */
-  --muted-foreground: hsl(45, 15%, 65%);  /* #b0ab9b */
-  --accent: hsl(15, 65%, 60%);            /* #d5805d */
-  --border: hsl(200, 12%, 25%);           /* #384147 */
+  /* Accent + footer text */
+  --accent: #f29e7f;
+  --fc-footer-heading: #f5f9f7;
+  --fc-footer-text: #9fb3bf;
 }

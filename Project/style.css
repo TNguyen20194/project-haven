@@ -1,7 +1,7 @@
 body {
       margin: 0;
       font-family: "Poppins", system-ui, sans-serif;
-      background: var(--background);
+      background: hsl(var(--background));
       color: var(--green-1);
       position: relative;
 }
@@ -160,7 +160,7 @@ header {
     right: 0;
     left: 0;
     margin: 0 auto;
-    background-color: rgba(247, 250, 248, .75);
+    background-color: var(--background);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
@@ -219,7 +219,7 @@ header {
 .navigation {
     display: flex;
     gap: 0.25rem;
-    background-color: var(--muted);
+    background-color: var(--muted2);
     padding: 0.375rem 0.5rem;
 }
 
@@ -231,7 +231,7 @@ header {
 }
 
 .navigation a:hover {
-    background-color: var(--background);
+    background-color: var(--soft-white2);
 }
 
 .button-nav {
@@ -310,7 +310,7 @@ body.dark .theme-icon--moon {
     align-items: center;
     gap: 0.5rem;
     color: var(--primary);
-    background-color: var(--muted);
+    background-color: var(--muted2);
     font-weight: var(--fw-medium);
     font-size: 0.875rem;
     padding: 0.5rem 1.25rem;
@@ -326,7 +326,7 @@ body.dark .theme-icon--moon {
 .hero-text {
     margin: 2rem auto 0 auto;
     font-size: 1.25rem;
-    color: var(--primary);
+    color: var(--primary2);
     font-weight: var(--fw-medium);
 }
 
@@ -355,8 +355,9 @@ body.dark .theme-icon--moon {
 
 .feature-card {
     padding: 2rem;
-    background-color: var(--white);
+    background-color: hsl(var(--card));
     border-radius: var(--radius);
+    border: 1px solid var(--soft-white);
      box-shadow: 
     0 4px 8px rgba(0, 0, 0, 0.04),
     0 12px 28px rgba(0, 0, 0, 0.08);
@@ -420,7 +421,7 @@ margin-top: 1.5rem;
 
 /* FOOTER */
 .footer-container {
-    background-color: var(--green-1);
+    background-color: var(--green-1a);
     padding: 3rem 1.5rem;
 }
 
