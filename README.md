@@ -5,7 +5,7 @@
 - The app will connect them to safe eveident-based strategy and resources.
 
 ## Step 1 - Sign up
-- User has to sign up. 
+- User has to sign up.
   - Age
   - Name
   - Email
@@ -22,25 +22,25 @@
   - If positive (Yes) ---> Direct to immediate support and resources: suicidal hotline
   - If negative (No) ---> Proceed to different screening tool
 <br>
+<img src="Project Notes/step-1.png" alt="Questionaire dashboard" width="600" />
 
-<img src="image-2.png" alt="screenshot" width="600" />
 <br>
 
  Use approved assessment tool to screen users. User will do a serries of multiple choice questions. The result will be generated once they completed.
- <img src="image-3.png" alt="screenshot" width="600" />
+ <img src="Project Notes/step-2.png" alt="Result Screen" width="600" />
  <br>
 
  Based on the user's answers, the approriate suggestions will be provided. This will tell us what condition they have. User can follow personalized suggestions for intervention
- <img src="image-4.png" alt="screenshot" width="600" />
+ <img src="Project Notes/step-3.png" alt="Suggestion for intervention" width="600" />
 <br>
 
 ### Home Screen
-<img src="image-5.png" alt="screenshot" width="600" />
+<img src="Project Notes/step-4.png" alt="Home screen" width="600" />
 
 
 ## Design Inspo
 
-<img src="image-1.png" alt="screenshot" width="600" />
+<img src="Project Notes/inspo-image-1.png" alt="Design inpo 1" width="600" />
+<img src="Project Notes/inspo-image-2.png" alt="Design inspo 2" width="600" />
 
-<img src="image.png" alt="screenshot" width="600" />
 
