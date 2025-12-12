@@ -7,6 +7,7 @@ body {
 }
 
 .button {
+    --btn-transition: background-color 0.2s ease;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -240,6 +241,7 @@ header {
     padding: 0.5rem 1.5rem;
     font-size: 0.875rem;
     font-weight: var(--fw-medium);
+    transition: var(--btn-transition);
 }
 
 .header-actions {
@@ -284,7 +286,7 @@ body.dark .theme-icon--moon {
   display: inline;
 }
 
-.button-nav:hover {
+.button-nav:hover, .button-cta:hover {
   background-color: #3E8888;
   color: #F0FDFC;
 }
@@ -339,6 +341,7 @@ body.dark .theme-icon--moon {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    transition: var(--btn-transition);
 }
 
 /* SERVICES */
@@ -417,6 +420,11 @@ margin-top: 1.5rem;
 .button-cta__profile {
     color: var(--green-1);
     background-color: var(--secondary);
+    transition: var(--btn-transition);
+}
+
+.button-cta__profile:hover {
+    background-color: #1F4D4D;
 }
 
 /* FOOTER */
