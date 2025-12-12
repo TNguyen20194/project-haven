@@ -160,7 +160,7 @@ header {
     right: 0;
     left: 0;
     margin: 0 auto;
-    background-color: var(--background);
+    background-color: hsl(var(--background) / 0.8);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
