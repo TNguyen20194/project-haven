@@ -15,18 +15,19 @@ const signUpOnlyFields = document.querySelectorAll(".sign-up-only");
 const authForm = document.getElementById("authForm");
 const submitBtn = document.getElementById("authBtn");
 
-console.log(signUpOnlyFields)
-
 //Form Input
-const nameInput = authForm.name.value;
-const emailInput = authForm.email.value;
-const password1 = authForm.password1.value;
-const password2 = authForm.password2.value;
+const nameInput = document.getElementById("name");
+const ageInput = document.getElementById("age");
+const phoneInput = document.getElementById("phone");
+const emailInput = document.getElementById("email");
+const password1El = document.getElementById("password1");
+const password2El = document.getElementById("password2");
 
-const formMessage = document.getElementById("formMessage");
 const messageContainer = document.getElementById("messageContainer");
+const formMessage = document.getElementById("formMessage");
 
-const savedUsersProfile = JSON.parse(localStorage.getItem("users")) || [];
+const savedUserProfile = JSON.parse(localStorage.getItem("user")) || [];
+
 
 // Toggle between "Login" and "Sign Up" tab
 tabs.forEach(tab => {
@@ -69,29 +70,100 @@ tabs.forEach(tab => {
 // Form Validation
 let isValid = false;
 let passwordMatch = false;
+let hideMessageTimeout = null;
+
+function showMessage(text, type) {
+    //clear previous timeout if exists
+    if(hideMessageTimeout) {
+        clearTimeout(hideMessageTimeout);
+    }
+
+    formMessage.textContent = text;
+    formMessage.style.opacity = "1";
+
+    if(type === "error") {
+        formMessage.style.color = "var(--color-invalid)";
+        if(messageContainer) {
+            messageContainer.style.borderColor = "var(--color-invalid)";
+        }
+        } else if(type === "success") {
+            formMessage.style.color = "var(--color-valid)";
+            if(messageContainer) {
+            messageContainer.style.borderColor = "var(--color-valid)";
+        }
+    } else {
+        formMessage.style.color = "";
+        if(messageContainer) {
+            messageContainer.style.borderColor = "";
+        }
+    }
+
+    hideMessageTimeout = setTimeout(() => {
+        formMessage.style.opacity = "0";
+        if(messageContainer) {
+            messageContainer.style.borderColor = "transparent";
+        }
+    }, 3000);
+};
 
 function validateForm() {
+    const password1 = password1El.value.trim();
+    const password2 = password2El.value.trim();
+
     isValid = authForm.checkValidity();
 
     if(!isValid) {
-        formMessage.textContent = "Please fill out all fields.";
-        formMessage.style.color = "var(--color-invalid)";
-        messageContainer.style.borderColor = "var(--color-invalid)";
-        return;
+        showMessage("Please fill out all fields.", "error");
+        return false;
     };
 
     if(password1 === password2) {
         passwordMatch = true;
+        password1El.style.borderColor = "";
+        password2El.style.borderColor = "";
     } else {
         passwordMatch = false;
-        formMessage.textContent = "Make sure passwords match.";
-        formMessage.style.color = "var(--color-invalid)";
-        messageContainer.style.borderColor = "var(--color-invalid)";
-        password1.style.borderColor = "var(--color-invalid)";
-        password2.style.borderColor = "var(--color-invalid)";
-        return;
-    }
+        showMessage("Make sure passwords match", "error");
+        password1El.style.borderColor = "var(--color-invalid)";
+        password2El.style.borderColor = "var(--color-invalid)";
+        return false;
+    };
+
+    // If form is valid and passwords match
+    if(isValid && passwordMatch) {
+        showMessage("Successfully Registered!", "success");
+        return true;
+    };
+
+    return false;
+};
+
+function storeFormData() {
+    const user = {
+        fullName: nameInput.value.trim(),
+        age: ageInput.value.trim(),
+        phone: phoneInput.value.trim(),
+        email: emailInput.value.trim(),
+        password1El: password1El.value.trim(),
+        password2El: password2El.value.trim(),
+    };
+
+    console.log(user);
+    savedUserProfile.push(user);
+    localStorage.setItem("user", JSON.stringify(savedUserProfile));
+};
+
+function processFormData(e) {
+    e.preventDefault();
+    validateForm();
+
+    if(isValid && passwordMatch) {
+        storeFormData();
+        authForm.reset();
+    };
 }
-console.log(isValid)
+
+
+authForm.addEventListener("submit", processFormData)
 
 // Add page redirect after user logins and signup

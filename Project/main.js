@@ -12,8 +12,9 @@ const themeToggle = document.getElementById("themeToggle");
 // CTAs
 const getStartedBtn = document.getElementById("getStartedBtn");
 const createProfileBtn = document.getElementById("createProfileBtn");
+const clientLoginTab = document.querySelectorAll(".clientLoginTab");
 
-console.log(getStartedBtn, createProfileBtn, themeToggle, body )
+console.log(getStartedBtn, createProfileBtn, themeToggle, body, clientLoginTab )
 
 // MOBILE MENU
 function openMenu() {
@@ -68,7 +69,14 @@ themeToggle.addEventListener("click", () => {
     localStorage.setItem("theme", currentTheme);
 })
 
-// PAGE REDIRECT
+ // PAGE REDIRECT
+clientLoginTab.forEach(tab => {
+    tab.addEventListener("click", () => {
+        document.location.href = "auth.html"
+    })
+})
+
+// === NOTE: Sign up tab should be highligted ===
 getStartedBtn.addEventListener("click", () => {
     document.location.href = "auth.html"
 });
