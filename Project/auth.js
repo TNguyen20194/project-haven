@@ -94,3 +94,4 @@ function validateForm() {
 }
 console.log(isValid)
 
+// Add page redirect after user logins and signup
