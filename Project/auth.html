@@ -7,7 +7,7 @@
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <!-- Style & JS -->
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="root.css">
@@ -15,50 +15,53 @@
     <script src="auth.js" defer></script>
 </head>
 <body>
-    <main class="container">
-        <h1>Sign Up Today!</h1>
-        <!-- Form -->
-         <form id="form">
-            <!-- Full Name -->
-             <div class="form-group">
-                <label for="name">Full Name</label>
-                <input id="name" type="text" placeholder="Full Name" required minlength="3" maxlength="100" name="name">
+    <main class="auth-page">
+        <section class="auth-page-container">
+            <div class="welcome">
+                <h1>Welcome</h1>
+                <p>Sign in to your account or create a new one</p>
             </div>
-            <!-- Phone Number -->
-            <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input id="phone" type="tel" placeholder="555-555-5555" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="phone">
+            <!-- Tabs -->
+             <div class="auth-tabs">
+                <button class="auth-tab auth-tab--active" data-tab="login" type="button">Login</button>
+                <button class="auth-tab" type="button" data-tab="signup">Sign Up</button>
+             </div>
+            <!-- Form -->
+            <form id="authForm">
+                <!-- Full Name -->
+                <div class="form-group sign-up-only">
+                    <label for="name">Full Name</label>
+                    <input id="name" type="text" placeholder="Full Name" required minlength="3" maxlength="100" name="name">
+                </div>
+                <!-- Phone Number -->
+                <div class="form-group sign-up-only">
+                    <label for="phone">Phone Number</label>
+                    <input id="phone" type="tel" placeholder="0123456789" required pattern="^\d{10}$" name="phone">
+                </div>
+                <!-- Email Address -->
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input id="email" type="email" placeholder="email@address.com" required name="email">
+                </div>
+                <!-- Password -->
+                <div class="form-group">
+                    <label for="password1">Password</label>
+                    <input id="password1" type="password" placeholder="Create Password" name="password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$" title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number">
+                </div>
+                <!-- Confirm Password -->
+                <div class="form-group sign-up-only">
+                    <label for="password2">Confirm Password</label>
+                    <input id="password2" type="password" placeholder="Confirm Password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$">
+                </div>
+                <button id="authBtn" type="submit" class="auth-btn">
+                    Login
+                </button>
+            </form>
+            <!-- Error/Success Message -->
+            <div id="messageContainer" class="message-container">
+                <p id="formMessage" class="form-message"></p>
             </div>
-             <!-- Email Address -->
-             <div class="form-group">
-                <label for="email">Email Address</label>
-                <input id="email" type="email" placeholder="email@address.com" required name="email">
-            </div>
-             <!-- Webiste URL -->
-             <div class="form-group">
-                <label for="website">Website URL</label>
-                <input id="website" type="url" placeholder="https://tpnguyen.ca/" required name="website">
-            </div>
-            <!-- Password -->
-            <div class="form-group">
-                <label for="password1">Password</label>
-                <input id="password1" type="password" placeholder="Create Password (Min. 8 characters)" name="password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$" title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number">
-            </div>
-            <!-- Confirm Password -->
-            <div class="form-group">
-                <label for="password2">Confirm Password</label>
-                <input id="password2" type="password" placeholder="Confirm Password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$">
-            </div>
-           <button type="submit">
-            Register
-           </button>
-         </form>
-         <!-- Error/Success Message -->
-          <div class="message-container">
-            <h3 id="message">Don't Hesitate!</h3>
-          </div>
+        </section>
     </main>
-    <!-- Script -->
-    <script src="script.js"></script>
 </body>
 </html>
