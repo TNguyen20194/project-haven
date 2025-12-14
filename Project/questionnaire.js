@@ -11,40 +11,77 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const questions = [
   {
-    question: "What keyword is used to declare a constant variable in JavaScript?",
-    answers: ["var", "let", "const", "static"],
-    correct: 2
-  },
-  {
-    question: "What does 'NaN' stand for in JavaScript?",
-    answers: ["Not a Name", "No assigned Number", "Not a Number", "Null and Nothing"],
-    correct: 2
-  },
-  {
-    question: "Which symbol is used for comments in JavaScript?",
-    answers: ["//", "/*", "<!--", "#"],
-    correct: 0
-  },
-  {
-    question: "What will `typeof []` return?",
-    answers: ["array", "object", "list", "undefined"],
-    correct: 1
-  },
-  {
-    question: "What does `console.log()` do?",
+    question: "How often do you feel overwhelmed by your emotions?",
     answers: [
-      "Opens a log file",
-      "Prints text to the console",
-      "Creates a variable",
-      "Runs your code twice"
-    ],
-    correct: 1
+        "Rarely – I feel emotionally balanced most of the time",
+        "Sometimes – Occasionally I struggle to manage my feelings",
+        "Often – I frequently feel emotionally overwhelmed",
+        "Almost always – My emotions feel out of control daily"
+    ]
   },
   {
-    question: "Which method adds an element to the end of an array?",
-    answers: ["push()", "pop()", "shift()", "join()"],
-    correct: 0
-  }
+    question: "How would you describe your current sleep patterns?",
+    answers: [
+        "I sleep well and wake up feeling rested",
+        "I have occasional trouble falling or staying asleep",
+        "I frequently have sleep issues affecting my daily life",
+        "I experience severe insomnia or sleep disturbances nightly"
+    ]
+  },
+  {
+    question: "How often do you experience feelings of anxiety or worry?",
+    answers: [
+        "Rarely – I generally feel calm and at ease",
+        "Sometimes – I worry about specific situations occasionally",
+        "Often – Anxiety affects my daily activities regularly",
+        "Constantly – Persistent worry dominates my thoughts"
+        ]
+  },
+  {
+    question: "How would you describe your motivation and interest in daily activities?",
+    answers: [
+        "I feel motivated and enjoy my regular activities",
+        "I sometimes lack motivation but can push through",
+        "I often struggle to find interest or pleasure in activities",
+        "I rarely feel motivated and have lost interest in most things"
+    ]
+  },
+  {
+    question: "How do you typically cope with stress?",
+    answers: [
+      "I have healthy coping mechanisms that work well for me",
+      "I manage okay but sometimes resort to unhealthy habits",
+      "I struggle to cope and often feel stuck",
+      "I rely heavily on unhealthy coping mechanisms"
+    ]
+  },
+  {
+    question: "How would you rate your relationships with family and friends?",
+    answers: [
+        "Strong and supportive – I feel connected to others",
+        "Generally good with occasional conflicts",
+        "Strained – I often feel misunderstood or isolated",
+        "Very difficult – Relationships cause significant distress"
+    ]
+  },
+  {
+    question: "Have you experienced any traumatic events that still affect you?",
+    answers: [
+        "No, or past events no longer impact my daily life",
+        "Yes, but I manage the effects reasonably well",
+        "Yes, and they occasionally interfere with my functioning",
+        "Yes, and they significantly impact my daily life"
+    ]
+  },
+  {
+    question: "How often do you have negative thoughts about yourself?",
+    answers: [
+        "Rarely – I generally have a positive self-image",
+        "Sometimes – I occasionally doubt myself",
+        "Often – Negative self-talk is a regular occurrence",
+        "Constantly – I struggle with persistent self-criticism"
+    ]
+  },
 ];
 
 
