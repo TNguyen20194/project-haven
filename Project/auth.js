@@ -188,6 +188,9 @@ function validateLoginForm() {
     return true;
 };
 
+// === NOTE ===
+// To add validation if email already exists then show error
+
 function validateSignUpForm() {
     const password1 = password1El.value.trim();
     const password2 = password2El.value.trim();
@@ -275,7 +278,7 @@ function loginUser() {
             email: foundUser.email
         }
     ));
-    
+
     return true;
    } else {
     console.log("Wrong credentials")
