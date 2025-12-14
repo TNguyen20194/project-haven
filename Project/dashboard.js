@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if(savedTheme === "dark") {
         document.body.classList.add("dark")
     } else if(savedTheme === "light") {
-        document.body.classList.add("ligth")
+        document.body.classList.add("light")
     }
 });
 
