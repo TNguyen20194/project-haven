@@ -112,16 +112,17 @@ getQuote();
 
  // PAGE REDIRECT
 clientLoginTab.forEach(tab => {
-    tab.addEventListener("click", () => {
-        document.location.href = "auth.html"
+    tab.addEventListener("click", (e) => {
+        e.preventDefault();
+        document.location.href = "auth.html?mode=login";
     })
 })
 
 // === NOTE: Sign up tab should be highligted ===
 getStartedBtn.addEventListener("click", () => {
-    document.location.href = "auth.html"
+    document.location.href = "auth.html?mode=signup";
 });
 
 createProfileBtn.addEventListener("click", () => {
-    document.location.href = "auth.html"
+    document.location.href = "auth.html?mode=signup";
 });

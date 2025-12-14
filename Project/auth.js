@@ -6,6 +6,17 @@ document.addEventListener("DOMContentLoaded", () => {
     } else if(savedTheme === "light") {
         document.body.classList.add("light")
     }
+
+    // Read mode from URL (login | signup)
+    const queryString = document.location.search;
+    console.log(queryString)
+
+    const param = new URLSearchParams(queryString);
+    const initiateMode = param.get("mode") === "signup" ? "signup" : "login";
+
+    console.log(initiateMode)
+    updateFormMode(initiateMode);
+
 });
 
 // FORM FUNCTIONALITY
@@ -158,21 +169,18 @@ function updateFormMode(mode) {
     password1El.style.borderColor = "";
     password2El.style.borderColor = "";
     clearMessage();
-
-    tabs.forEach(tab => {
-        tab.addEventListener("click", () => {
-            const selectedTab = tab.dataset.tab;
-
-            // Do nothing if user clicks the already active tab
-            if(selectedTab === currentMode) return;
-
-            updateFormMode(selectedTab);
-        })
-    })
 };
 
-// Default form mode
-updateFormMode("login");
+tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+        const selectedTab = tab.dataset.tab;
+
+        // Do nothing if user clicks the already active tab
+        if(selectedTab === currentMode) return;
+
+        updateFormMode(selectedTab);
+    })
+});
 
 
 function validateLoginForm() {

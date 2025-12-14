@@ -350,7 +350,7 @@ body.dark .theme-icon--moon {
 .quote-section {
     padding: 4rem 1.5rem;
     text-align: center;
-    background-color: linear-gradient(
+    background: linear-gradient(
         180deg,
         #f7faf8 0%,
         #fdfbf6 100%
