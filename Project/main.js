@@ -6,6 +6,12 @@ const mobileMenu = document.getElementById("mobile-menu");
 const toggleButtons = document.querySelectorAll(".mobile-menu-toggle");
 const mobileLinks = mobileMenu.querySelectorAll("a");
 
+// QUOTE
+const quote = document.getElementById("quote");
+const author = document.getElementById("author");
+
+console.log(quote, author)
+
 // THEME ICON
 const themeToggle = document.getElementById("themeToggle");
 
@@ -68,6 +74,41 @@ themeToggle.addEventListener("click", () => {
     const currentTheme = body.classList.contains("dark") ? "dark" : "light";
     localStorage.setItem("theme", currentTheme);
 })
+
+// DYNAMIC QUOTE + AUTHOR
+let apiQuotes = [];
+
+function newQuote() {
+    if(!Array.isArray(apiQuotes) || apiQuotes.length === 0) {
+        return;
+    };
+
+    const motivationalQuotes = apiQuotes.filter(q => q.tag === "motivational");
+
+    // Use all apiQuotes if motivationalQuotes is empty
+    const quoteOptions = motivationalQuotes.length ? motivationalQuotes : apiQuotes;
+
+    console.log(motivationalQuotes)
+
+    const randomQuotes = quoteOptions[Math.floor(Math.random() * quoteOptions.length)];
+    author.textContent = `-${randomQuotes.author}`;
+    quote.textContent = `"${randomQuotes.text}"`;
+    console.log(randomQuotes)
+}
+
+async function getQuote() {
+    const apiUrl = "https://jacintodesign.github.io/quotes-api/data/quotes.json";
+    try{
+        const response = await fetch(apiUrl);
+        apiQuotes = await response.json();
+        newQuote();
+    } catch (error) {
+        console.error(error)
+    }
+};
+
+// On load
+getQuote();
 
  // PAGE REDIRECT
 clientLoginTab.forEach(tab => {
