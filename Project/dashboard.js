@@ -7,3 +7,21 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.classList.add("ligth")
     }
 });
+
+// Load saved user
+document.addEventListener("DOMContentLoaded", () => {
+    const userNameEl = document.getElementById("userName");
+    const currentUserRaw = localStorage.getItem("currentUser");
+
+    if(!currentUserRaw) {
+        if(userNameEl) {
+            userNameEl.textContent = "Guest";
+        }
+        return;
+    };
+
+    const currentUser = JSON.parse(currentUserRaw);
+    if(userNameEl && currentUser.fullName) {
+        userNameEl.textContent = currentUser.fullName;
+    }
+});

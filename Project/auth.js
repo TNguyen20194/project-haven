@@ -27,13 +27,14 @@ const password2El = document.getElementById("password2");
 const messageContainer = document.getElementById("messageContainer");
 const formMessage = document.getElementById("formMessage");
 
-const savedUserProfile = JSON.parse(localStorage.getItem("user")) || [];
+const userSavedProfiles = JSON.parse(localStorage.getItem("userSignUp")) || [];
 
 // Form State
 let isValid = false;
 let passwordMatch = false;
 let hideMessageTimeout = null;
 let currentMode = "login";
+let loginPass = false;
 
 function clearMessage() {
     if(hideMessageTimeout) {
@@ -222,9 +223,9 @@ function validateSignUpForm() {
 
 function validateForm() {
     if(currentMode === "login") {
-        return validateLoginForm()
+        return validateLoginForm();
     } else {
-        return validateSignUpForm()
+        return validateSignUpForm();
     }
 };
 
@@ -234,13 +235,54 @@ function storeFormData() {
         age: ageInput.value.trim(),
         phone: phoneInput.value.trim(),
         email: emailInput.value.trim(),
-        password1El: password1El.value.trim(),
-        password2El: password2El.value.trim(),
+        password1: password1El.value.trim(),
+        password2: password2El.value.trim(),
     };
 
-    console.log(user);
-    savedUserProfile.push(user);
-    localStorage.setItem("user", JSON.stringify(savedUserProfile));
+    console.log("Saving user: ", user);
+    userSavedProfiles.push(user);
+    localStorage.setItem("userSignUp", JSON.stringify(userSavedProfiles));
+};
+
+function loginUser() {
+    const userEmailInput = emailInput.value.trim();
+    const userPasswordInput = password1El.value.trim();
+
+    const userSavedProfiles = JSON.parse(localStorage.getItem("userSignUp")) || [];
+    console.log(userSavedProfiles)
+
+   if(!userSavedProfiles.length) {
+    showMessage("No account found. Please sign up first.", "error");
+    loginPass = false;
+    return false
+   };
+
+   const foundUser = userSavedProfiles.find(user =>
+    user.email === userEmailInput && user.password1 === userPasswordInput
+   );
+
+   console.log(foundUser)
+
+   if(foundUser) {
+    console.log("Login successful!")
+    showMessage("Login successful!", "success");
+    loginPass = true;
+
+
+    localStorage.setItem("currentUser", JSON.stringify(
+        {
+            fullName: foundUser.fullName,
+            email: foundUser.email
+        }
+    ));
+    
+    return true;
+   } else {
+    console.log("Wrong credentials")
+    showMessage("Incorrect email or password.", "error");
+    loginPass = false;
+    return false;
+   }
 };
 
 function processFormData(e) {
@@ -251,14 +293,23 @@ function processFormData(e) {
 
     if(currentMode === "signup") {
         storeFormData();
+        authForm.reset();
+
+        setTimeout(() => {
+            document.location.href = "questionaire.html"
+        }, 3000);
     } else {
-        console.log("Login successfully!")
+        const loggedIn = loginUser();
+        if(!loggedIn) return;
+
+        authForm.reset();
+
+        setTimeout(() => {
+            document.location.href = "dashboard.html"
+        }, 3000)
     }
+};
 
-    authForm.reset();
-}
-
-
-authForm.addEventListener("submit", processFormData)
+authForm.addEventListener("submit", processFormData);
 
 // Add page redirect after user logins and signup
