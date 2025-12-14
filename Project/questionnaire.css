@@ -29,9 +29,24 @@
 .questionnaire__container {
     max-width: 42rem;
     margin: 0 auto;
+    
 }
 
 .questionnaire p {
     color: var(--green-1);
     font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.question-card{
+    border-radius: var(--radius);
+}
+
+.question-card-wrapper {
+    padding: 1.5rem;
+
+}
+
+.question-card {
+ border: 1px solid red;
 }

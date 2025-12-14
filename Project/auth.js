@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log(queryString)
 
     const param = new URLSearchParams(queryString);
+    console.log(param)
     const initiateMode = param.get("mode") === "signup" ? "signup" : "login";
 
     console.log(initiateMode)
