@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="root.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="questionnaire.css">
 
     <script src="main.js" defer></script>
      <script src="questionaire.js" defer></script>
@@ -91,9 +91,25 @@
             </div>
          </div>
     <main class="dashboard">
-        <h1>Let's Get to Know You<span id="userName"></span> !</h1>
-        <p>...Oops, we're experiencing technical difficulty. <br>We'll get you started soon!</p>
-        <img src="Assets/monster-lightbulb.png" alt="Monster meditate" style="width: 300px;">
+        <div class="dashboard__timeout hidden">
+            <h1>Let's Get to Know You<span id="userName"></span> !</h1>
+            <p>...Oops, we're experiencing technical difficulty. <br>We'll get you started soon!</p>
+            <img src="Assets/monster-lightbulb.png" alt="Monster meditate" style="width: 300px;">
+        </div>
+        <section class="questionnaire">
+            <div class="questionnaire__container">
+                <div>
+                    <h1>Personal Assessment</h1>
+                    <p>Help us understand your needs better by answering a few questions</p>
+                </div>
+            </div>
+            <div class="progress-bar">
+                <span></span>
+            </div>
+            <div class="">
+                <!-- Dynamic question cards -->
+            </div>
+        </section>
     </main>
 </body>
 </html>
